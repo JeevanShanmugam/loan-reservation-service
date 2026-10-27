@@ -1,0 +1,20 @@
+{
+  "name": "DevOps Starter Kit",
+  "image": "ghcr.io/tpdavison/devops-labs:latest",
+
+  "features": {},
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-azuretools",
+        "ms-vscode-remote.remote-containers",
+        "esbenp.prettier-vscode"
+      ]
+    }
+  },
+
+  "postCreateCommand": "if [ '${localEnv:OS:unknown}' = 'Windows_NT' ]; then git config --global --add safe.directory '${containerWorkspaceFolder}' && git -C '${containerWorkspaceFolder}' config --local core.fileMode false; fi"
+}

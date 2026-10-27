@@ -1,0 +1,30 @@
+{
+  "name": "loan-reservation-service",
+  "version": "1.0.0",
+  "description": "University Device Loan and Reservation Service",
+  "main": "dist/src/functions/*.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "clean": "rimraf dist",
+    "prestart": "npm run clean && npm run build",
+    "start": "func start --typescript",
+    "test": "echo \"No automated tests configured yet\" && exit 1",
+    "demo:domain": "npm run build && node dist/scripts/demo-domain.js",
+    "demo:list": "npm run build && node dist/scripts/demo-list.js",
+    "seed": "npm run build && node dist/scripts/seed-product-repo.js"
+  },
+  "dependencies": {
+    "@azure/cosmos": "~4.10.1",
+    "@azure/functions": "~4.16.5"
+  },
+  "devDependencies": {
+    "@types/node": "~22.20.5",
+    "azure-functions-core-tools": "~4.16.0",
+    "rimraf": "~5.0.0",
+    "typescript": "~7.0.2"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}
